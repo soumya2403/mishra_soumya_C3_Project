@@ -59,6 +59,10 @@ public class Restaurant {
                 +"Menu:"+"\n"+getMenu());
 
     }
+    public int calculateTotalCost(String ... itemNames) throws itemNotFoundException {
+        int totalCost = 0;
+        return totalCost ;
+    }
 
     public String getName() {
         return name;

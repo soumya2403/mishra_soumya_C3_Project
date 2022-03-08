@@ -67,4 +67,15 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void calculate_total_cost_of_items_388() throws itemNotFoundException {
+        int totalCost= restaurant.calculateTotalCost("Vegetable lasagne","Sweet corn soup");
+        assertEquals(388,totalCost);
+    }
+
+    @Test
+    public void calculate_total_cost_of_items_that_does_not_exist_throws_exception() throws itemNotFoundException {
+        assertThrows(itemNotFoundException.class,
+                ()->restaurant.calculateTotalCost("French fries"));    }
 }
