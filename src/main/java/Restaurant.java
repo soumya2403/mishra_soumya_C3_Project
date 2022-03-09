@@ -61,6 +61,12 @@ public class Restaurant {
     }
     public int calculateTotalCost(String ... itemNames) throws itemNotFoundException {
         int totalCost = 0;
+        for (String itemName: itemNames) {
+            Item item = findItemByName(itemName);
+            if (item == null)
+                throw new itemNotFoundException(itemName);
+            totalCost = totalCost+ item.getPrice();
+        }
         return totalCost ;
     }
 
